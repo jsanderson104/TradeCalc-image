@@ -3,4 +3,14 @@
 
 podman build -f Containerfile -t my-nginx:latest .
 
-podman tag my-nginx docker.io/jsanderson104/stuff:latest
+
+
+# Find my Linux UID
+UID=$(getent passwd $(whoami) | cut -d: -f3)
+
+# Set Docker.io registry creds so I can push image
+cp /home/jenkins/workspace/Build-Nginx-Image/auth.json /run/user/1000/containers/auth.json
+
+podman login docker.io || exit 1
+
+podman tag my-nginx docker.io/jsanderson104/stuff/my-nginx:latest
