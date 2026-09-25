@@ -14,3 +14,7 @@ podman login docker.io || exit 1
 podman tag my-nginx my-nginx:latest
 
 podman push localhost/my-nginx docker.io/jsanderson104/stuff:my-nginx
+
+
+# Run the new image in a container called test
+podman stop test && podman rm test && podman rmi docker.io/jsanderson104/stuff:my-nginx && podman run -dt --name test -p 9090:9090 docker.io/jsanderson104/stuff:my-nginx
