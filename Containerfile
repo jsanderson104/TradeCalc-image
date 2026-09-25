@@ -7,4 +7,4 @@ EXPOSE 9090
 RUN ln -s /usr/share/nginx/html /app
 
 # Copy the local PHP file into the /app directory
-COPY index.php /app/index.php
+COPY tradecalc.php /app/index.php
