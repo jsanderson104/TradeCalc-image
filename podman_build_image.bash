@@ -12,3 +12,5 @@ cp /home/jenkins/workspace/Build-Nginx-Image/auth.json /run/user/$MYUID/containe
 podman login docker.io || exit 1
 
 podman tag my-nginx my-nginx:latest
+
+podman push localhost/my-nginx docker.io/jsanderson104/stuff:latest
