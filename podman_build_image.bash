@@ -24,4 +24,4 @@ podman rmi localhost/my-nginx
 podman rmi docker.io/jsanderson104/stuff:my-nginx
 
 # Run the new build as a container called "test"
-podman run -dt --name test -p 9090:9090 docker.io/jsanderson104/stuff:my-nginx
+#podman run -dt --name test -p 9090:9090 docker.io/jsanderson104/stuff:my-nginx
