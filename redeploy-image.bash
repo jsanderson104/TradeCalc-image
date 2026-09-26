@@ -14,7 +14,7 @@ else
   podman rmi docker.io/jsanderson104/stuff:my-nginx
 
 # Set linger on account so container won't exit when Jenkins disconnects
-loginctl linger 99999999
+sudo loginctl enable-linger podman-builder
 
 # Run latest release..
 podman run -dt --name test -p 9090:9090 docker.io/jsanderson104/stuff:my-nginx
