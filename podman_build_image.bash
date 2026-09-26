@@ -7,7 +7,7 @@ podman build -f Containerfile -t my-nginx:latest .
 MYUID=$(getent passwd $(whoami) | cut -d: -f3)
 
 # Set Docker.io registry creds so I can push image
-cp /home/$SUDO_USER/workspace/Build-Nginx-Image/auth.json /run/user/$MYUID/containers/auth.json
+cp /home/podman-builder/workspace/Build-Nginx-Image/auth.json /run/user/$MYUID/containers/auth.json
 
 podman login docker.io || exit 1
 
