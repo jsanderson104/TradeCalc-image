@@ -12,7 +12,10 @@ else
   podman rmi docker.io/library/nginx
   podman rmi localhost/my-nginx
   podman rmi docker.io/jsanderson104/stuff:my-nginx
-  
-  # Run latest release..
-  podman run -dt --name test -p 9090:9090 docker.io/jsanderson104/stuff:my-nginx
-  fi
+
+# Set linger on account so container won't exit when Jenkins disconnects
+loginctl linger 99999999
+
+# Run latest release..
+podman run -dt --name test -p 9090:9090 docker.io/jsanderson104/stuff:my-nginx
+fi
