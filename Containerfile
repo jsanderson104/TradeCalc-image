@@ -17,7 +17,7 @@ COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 # Copy the local PHP file into the /app directory
 COPY index.html /usr/share/nginx/html
 RUN chmod 644 /usr/share/nginx/html/index.html
-
+RUN echo hello >/hello.txt
 
 
 
