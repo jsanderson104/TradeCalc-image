@@ -3,7 +3,8 @@ FROM docker.io/library/nginx:latest
 # Expose port 9090
 EXPOSE 9090
 
-RUN apt update -y && apt install -y net-tools vim
+# Only needed for testing connectivity/tshooting
+#RUN apt update -y && apt install -y net-tools vim
 
 # Custom nginx config file that enables handling of PHP
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
