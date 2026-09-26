@@ -38,5 +38,5 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 9090
+      port: 80 # Changed this from 9090 to port 80 since it's NGINX and it wouldn't make sense to put another nginx reverse proxy infront of this one. If i want SSL configure it in the image/container start and not over-complicate it with 2nginx instances.
       targetPort: 9090
