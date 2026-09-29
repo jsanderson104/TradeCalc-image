@@ -13,7 +13,7 @@ podman login docker.io || exit 1
 
 podman tag my-nginx my-nginx:latest
 
-podman push localhost/my-nginx docker.io/jsanderson104/stuff:v2
+podman push localhost/my-nginx docker.io/jsanderson104/stuff:v3
 
 # Cleanup old images and tags to make sure we can the most recent of everything.
 #podman stop test ; 
